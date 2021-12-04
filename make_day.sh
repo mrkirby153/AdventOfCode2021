@@ -5,7 +5,7 @@
 mkdir -p $1
 
 cat > $1/$1.py <<EOF
-with open('input.txt', ) as f:
+with open('input.txt') as f:
     input_data = list(map(lambda x: x.replace('\n', ''), f.readlines()))
 
 
