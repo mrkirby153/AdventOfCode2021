@@ -1,3 +1,5 @@
+import functools
+
 with open('input.txt') as f:
     input_data = list(map(lambda x: x.replace('\n', ''), f.readlines()))
 
@@ -9,10 +11,15 @@ def calculate_fuel_cost(target, crabs):
         total_cost += abs(crab - target)
     return total_cost
 
+
+@functools.lru_cache(maxsize=None)
+def calculate_crab_fuel_cost(distance):
+    return sum(range(1, distance + 1))
+
 def calculate_part_2_cost(target, crabs):
     total_cost = 0
     for crab in crabs:
-        total_cost += sum(range(1, abs(crab - target) + 1))
+        total_cost += calculate_crab_fuel_cost(abs(crab - target))
     return total_cost
 
 def part_1():
