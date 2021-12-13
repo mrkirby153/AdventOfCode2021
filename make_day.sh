@@ -8,16 +8,12 @@ cat > $1/$1.py <<EOF
 with open('input.txt') as f:
     input_data = list(map(lambda x: x.replace('\n', ''), f.readlines()))
 
-
 def part_1():
     pass
-
 
 def part_2():
     pass
 
-
-print(input_data)
 print(f"Part 1: {part_1()}")
 print(f"Part 2: {part_2()}")
 EOF
