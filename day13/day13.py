@@ -40,7 +40,7 @@ def render_grid(points, fold_x = None, fold_y = None, width = None, height = Non
             elif y == fold_y:
                 grid_str += "-"
             else:
-                grid_str += '#' if (x, y) in points else ' '
+                grid_str += '█' if (x, y) in points else ' '
         grid_str += "\n"
     return grid_str
 
